@@ -1,0 +1,15 @@
+# my (chris.kirke@gmail.com) .inputrc
+set completion-ignore-case on
+set completion-query-items 32
+set editing-mode vi
+
+# vi settings
+$if mode=vi
+    # normal mode
+    set keymap vi-command
+    "jk": vi-insertion-mode
+    # insert mode
+    set keymap vi-insert
+    Control-p: previous-history
+    "jk": vi-insertion-mode
+$endif
