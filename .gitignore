@@ -1,5 +1,6 @@
 # keep repo clean
 *~
+*.swp
 .*~
 .CFUserTextEncoding
 .DS_Store
@@ -12,7 +13,9 @@
 .keepassx
 .perlbrew
 .ssh
+.vim
 .viminfo
+bugreport.txt
 Desktop
 Documents
 Downloads
