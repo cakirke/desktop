@@ -7,9 +7,7 @@ set editing-mode vi
 $if mode=vi
     # normal mode
     set keymap vi-command
-    "jk": vi-insertion-mode
     # insert mode
     set keymap vi-insert
     Control-p: previous-history
-    "jk": vi-insertion-mode
 $endif

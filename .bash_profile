@@ -1,5 +1,5 @@
 export PATH=${HOME}/Bin:/usr/local/sbin:/usr/local/bin:${PATH}
-export EDITOR=joe
+export EDITOR=vim
 
 export ORACLE_HOME=${HOME}/Oracle/instantclient_12_1
 
