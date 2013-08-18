@@ -1,10 +1,7 @@
-[user]
-    name = Christopher A. Kirke
-    email = chris.kirke@gmail.com
-[credential]
-    helper = osxkeychain
-[push]
-    default = simple
+[alias]
+    dp = diff --stat
+    lp = log --pretty=log
+    lpgs = log --pretty=log --graph --stat
 [color]
     branch = auto
     diff = auto
@@ -13,3 +10,22 @@
     pager = true
     status = auto
     ui = auto
+[core]
+    editor = vim
+[credential]
+    helper = osxkeychain
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[merge]
+    tool = vimdiff
+[mergetool]
+    prompt = false
+[pretty]
+    log = "format:[%C(yellow)%h%Creset] %C(cyan)%ae%Creset, %ar: %s"
+[push]
+    default = simple
+[user]
+    email = chris.kirke@gmail.com
+    name = Christopher A. Kirke
