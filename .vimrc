@@ -19,7 +19,7 @@
 set nocompatible
 
 " remap leader
-let mapleader=","
+let mapleader=";"
 
 " use vundle for addon management
 set runtimepath +=~/.vim/bundle/vundle/
@@ -139,13 +139,11 @@ set foldnestmax=10
 set scrolloff=4
 set scrollopt=ver,hor,jump
 
-" (re)map keys - ALL modes
-noremap ; :
-
 " (re)map keys - NORMAL mode
 nnoremap ' `
 nnoremap ` '
-nnoremap ;; :GundoToggle<CR>
+nnoremap <Leader>f :GundoToggle<CR>
+nnoremap <Leader>d :NERDTreeToggle<CR>
 nnoremap b <PageUp>
 nnoremap <Space> <PageDown>
 
