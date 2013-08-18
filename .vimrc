@@ -31,6 +31,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'edsono/vim-matchit'
+Bundle 'scrooloose/nerdtree'
 Bundle 'mkitt/tabline.vim'
 
 " set airline behavior
@@ -45,11 +46,12 @@ let g:airline_detect_iminsert = 1
 " set gundo behavior
 let g:gundo_close_on_revert=1
 
-" set highlight/tabline behavior
+" set color/highlight/tabline behavior
 highlight LineNr      ctermfg=DarkGrey ctermbg=Black     cterm=none
 highlight TabLine     ctermfg=Black    ctermbg=DarkGrey  cterm=none
 highlight TabLineFill ctermfg=Black    ctermbg=DarkGrey  cterm=none
 highlight TabLineSel  ctermfg=Black    ctermbg=LightGrey cterm=none
+set background=dark
 
 " set mouse behavior
 set mouse=a
@@ -61,6 +63,8 @@ set backspace=indent,eol,start
 set incsearch
 set showcmd
 set timeoutlen=500
+set ttimeout
+set ttimeoutlen=100
 set wildmode=list:longest
 
 " set syntax-specific behavior
@@ -109,7 +113,7 @@ set showtabline=2
 " set search behavior
 set history=1000
 set hlsearch
-set ignorecase 
+set ignorecase
 set incsearch
 set smartcase
 
@@ -118,8 +122,10 @@ set title
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
 
 " set indent/tab behavior
+set autoindent
 set expandtab
 set shiftwidth=4
+set smarttab
 set softtabstop=4
 set tabstop=8
 
@@ -144,7 +150,7 @@ nnoremap b <PageUp>
 nnoremap <Space> <PageDown>
 
 " set viminfo storage behavior
-set viminfo=!10,'100,<50,s10,h
+set viminfo=!,'100,<50,s10,h
 
 " set autocmds
 augroup default
