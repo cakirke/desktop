@@ -1,4 +1,5 @@
 alias jc='jcheck.plx -f'
 alias joe='vim'
 alias pc='pcheck.plx -f'
+alias ps='colourify ps'
 alias rm='rm -i'
