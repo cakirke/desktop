@@ -64,7 +64,7 @@ set incsearch
 set showcmd
 set timeoutlen=500
 set ttimeout
-set ttimeoutlen=100
+set ttimeoutlen=500
 set wildmode=list:longest
 
 " set syntax-specific behavior
