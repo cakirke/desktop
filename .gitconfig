@@ -11,7 +11,9 @@
     status = auto
     ui = auto
 [core]
+    autocrlf = input
     editor = vim
+    safecrlf = true
 [credential]
     helper = osxkeychain
 [diff]
