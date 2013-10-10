@@ -6,12 +6,15 @@
 .DS_Store
 .Trash
 .bash_history
+.config
 .cpanm
+.cups
 .dropbox
 .joe_state
 .keepassx
 .npm
 .perlbrew
+.rnd
 .ssh
 .vim
 .viminfo
