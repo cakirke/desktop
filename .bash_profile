@@ -1,4 +1,5 @@
-export PATH=${HOME}/Bin:/usr/local/sbin:/usr/local/bin:${PATH}
+export ADT_HOME=${HOME}/Tools/adt-bundle-mac-x86_64-20131030/sdk
+export PATH=${HOME}/Bin:${ADT_HOME}/tools:${ADT_HOME}/platform-tools:/usr/local/sbin:/usr/local/bin:${PATH}
 export EDITOR=vim
 
 export ORACLE_HOME=${HOME}/Oracle/instantclient_12_1

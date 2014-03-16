@@ -5,20 +5,26 @@
 .CFUserTextEncoding
 .DS_Store
 .Trash
+.android
 .bash_history
 .config
 .cpanm
 .cups
 .dropbox
+.dropbox-master
 .joe_state
+.john
 .keepassx
 .npm
 .perlbrew
 .rnd
 .ssh
+.subversion
 .vim
 .viminfo
+.wireshark
 bugreport.txt
+Applications
 Desktop
 Documents
 Downloads
@@ -30,3 +36,5 @@ Music
 Perl
 Pictures
 Public
+Tools
+VirtualBox VMs
