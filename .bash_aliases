@@ -1,3 +1,4 @@
+alias barley='brew update && brew upgrade && brew linkapps && brew cleanup && brew prune && brew doctor'
 alias jc='jcheck.plx -f'
 alias joe='vim'
 alias pc='pcheck.plx -f'

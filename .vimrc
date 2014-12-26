@@ -24,16 +24,26 @@ let mapleader=";"
 " use vundle for addon management
 set runtimepath +=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Bundle 'ap/vim-css-color'
 Bundle 'bling/vim-airline'
-Bundle 'skammer/vim-css-color'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-fugitive'
-Bundle 'sjl/gundo.vim'
+Bundle 'c9s/perlomni.vim'
 Bundle 'edsono/vim-matchit'
+Bundle 'gmarik/vundle'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'mkitt/tabline.vim'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'pangloss/vim-javascript'
+Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
-Bundle 'mkitt/tabline.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
 
 " set airline behavior
 let g:airline_left_sep = ''
@@ -43,6 +53,9 @@ let g:airline_right_alt_sep = ''
 let g:airline_detect_modified = 1
 let g:airline_detect_paste = 1
 let g:airline_detect_iminsert = 1
+let g:airline#extensions#quickfix#location_text = 'Location'
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline#extensions#tabline#enabled = 1
 
 " set gundo behavior
 let g:gundo_close_on_revert=1
@@ -65,12 +78,17 @@ set incsearch
 set showcmd
 set timeoutlen=500
 set ttimeout
-set ttimeoutlen=500
+set ttimeoutlen=100
 set wildmode=list:longest
 
 " set syntax-specific behavior
 filetype plugin indent on
 syntax on
+
+" configure autocompletion
+set complete=.,w,b,u,t,i
+set completeopt=longest,menu,preview
+set omnifunc=syntaxcomplete#Complete
 
 " set backup behavior
 let backup_dir = expand('~/.vim/backup')
@@ -99,11 +117,13 @@ if has('persistent_undo')
 endif
 
 " set buffer/window/tab behavior
+set confirm
 set hidden
 set switchbuf=useopen,usetab
 set tabpagemax=8
 
 " set lastline/linenumber/ruler/statusline/tabline behavior
+set cursorline
 set display+=lastline
 set laststatus=2
 set noshowmode
@@ -132,7 +152,7 @@ set tabstop=8
 
 " set code folding behavior
 set foldclose=all
-set foldlevelstart=0
+set foldlevelstart=10
 set foldmethod=syntax
 set foldnestmax=10
 

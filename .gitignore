@@ -7,6 +7,7 @@
 .Trash
 .android
 .bash_history
+.cache
 .config
 .cpanm
 .cups
@@ -15,6 +16,7 @@
 .joe_state
 .john
 .keepassx
+.node-gyp
 .npm
 .perlbrew
 .rnd
@@ -35,6 +37,7 @@ Movies
 Music
 Perl
 Pictures
+Project
 Public
 Tools
 VirtualBox VMs
