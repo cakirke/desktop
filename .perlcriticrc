@@ -226,7 +226,7 @@ severity = 1
 # maximum_violations_per_document    = no_limit
 
 # The Perl::Tidy configuration file to use, if any.
-perltidyrc = /Users/cakirke/.perltidyrc
+perltidyrc = /Users/chris/.perltidyrc
 
 
 # Put a comma at the end of every multi-line list declaration, including the last one.
@@ -545,14 +545,14 @@ functions = open close opendir closedir
 
 
 # Put source-control keywords in every file.
-[Miscellanea::RequireRcsKeywords]
+# [Miscellanea::RequireRcsKeywords]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 2
 # maximum_violations_per_document    = no_limit
 
 # The keywords to require in all files.
-keywords = Revision Date Author
+# keywords = Revision Date Author
 
 
 # Export symbols via `@EXPORT_OK' or `%EXPORT_TAGS' instead of `@EXPORT'.
