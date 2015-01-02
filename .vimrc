@@ -47,11 +47,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-perl/vim-perl'
 
-" set syntax-specific behavior
-filetype plugin indent on
-syntax on
-
-" set airline behavior
+" configure airline behavior
 let g:airline_theme = 'dark'
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -60,7 +56,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_detect_modified = 1
 let g:airline_detect_paste = 1
 let g:airline_detect_iminsert = 1
-let g:airline_section_z = '%3c [%02B] %3p%% %2(%{winnr()}%)'
+let g:airline_section_z = '%3c [0x%03B] %3p%% %2(%{winnr()}%)'
 let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
 let g:airline#extensions#tabline#enabled = 1
@@ -69,28 +65,40 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#tab_nr_type = 1
 
-" set gitgutter behavior
+" configure easymotion behavior
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_upper = 1
+
+" configure gitgutter behavior
 let g:gitgutter_sign_column_always = 1
 
-" set gundo behavior
+" configure gundo behavior
 let g:gundo_close_on_revert=1
 
-" set syntastic behavior
+" configure syntastic behavior
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_auto_jump = 3
 
-" set color/highlight/gutter/tabline behavior
+" configure syntax-specific behavior
+filetype plugin indent on
+syntax on
+
+" configure color scheme
+highlight link EasyMotionTarget VisualNOS 
+highlight link EasyMotionShade LineNr
 highlight LineNr ctermfg=DarkGrey
 highlight SignColumn ctermbg=None
 set background=dark
 
-" set mouse behavior
+" configure mouse behavior
 set mouse=a
 
-" set backspace behavior
-set backspace=indent,eol,start
+" configure backspace behavior
+set backspace=eol,indent,start
 
-" set command behavior
+" configure command behavior
 set incsearch
 set showcmd
 set timeoutlen=1000
@@ -103,7 +111,7 @@ set wildmode=longest:list,full
 set complete=.,w,b,u,t,i
 set completeopt=longest,menu,preview
 
-" set backup behavior
+" configure backup behavior
 let backup_dir = expand('~/.vim/backup')
 if filewritable(backup_dir) != 2
     call mkdir(backup_dir, 'p')
@@ -111,7 +119,7 @@ endif
 let &backupdir=backup_dir
 set backup
 
-" set swap behavior
+" configure swap behavior
 let swap_dir = expand('~/.vim/swap')
 if filewritable(swap_dir) != 2
     call mkdir(swap_dir, 'p')
@@ -119,7 +127,7 @@ endif
 let &directory=swap_dir
 set swapfile
 
-" set undo behavior
+" configure undo behavior
 if has('persistent_undo')
     let undo_dir = expand('~/.vim/undo')
     if filewritable(undo_dir) != 2
@@ -129,36 +137,33 @@ if has('persistent_undo')
     set undofile
 endif
 
-" set buffer/window/tab behavior
+" configure buffer/window/tab behavior
 set confirm
 set hidden
 set switchbuf=useopen,usetab
 set tabpagemax=8
+set title
+set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
 
-" set lastline/linenumber/ruler/statusline/tabline behavior
+" configure lastline/linenumber/statusline/tabline behavior
 set cursorline
 set display+=lastline
 set laststatus=2
 set noshowmode
 set number
-set ruler
 set showtabline=2
 
-" set history/search behavior
+" configure history/search behavior
 set history=100
 set hlsearch
 set ignorecase
 set incsearch
 set smartcase
 
-" set viminfo storage behavior
-set viminfo=!,'100,<50,s10,h
+" configure viminfo storage behavior
+set viminfo=!,h,'500,<1000,s1000,/1000,:1000
 
-" set window title behavior
-set title
-set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
-
-" set indent/tab behavior
+" configure indent/tab behavior
 set autoindent
 set expandtab
 set shiftwidth=4
@@ -166,71 +171,81 @@ set smarttab
 set softtabstop=4
 set tabstop=8
 
-" set code folding behavior
+" configure code folding behavior
 set foldclose=all
 set foldlevelstart=10
 set foldmethod=syntax
 set foldnestmax=10
 
-" set scrolling behavior
+" configure scrolling behavior
 set scrolloff=4
 set scrollopt=ver,hor,jump
 
-" (re)map keys - NORMAL mode
+" enable paste toggle
+set pastetoggle=<ESC>p
+
+" avoid duplicate terminal output for subshell commands
+set shellpipe=>
+
+" map keys - NORMAL mode
 nnoremap ' `
 nnoremap ` '
-nnoremap b <PageUp>
-nnoremap <Space> <PageDown>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gu :GundoToggle<CR>
-nnoremap <Leader>nt :NERDTreeToggle<CR>
-nnoremap <Leader>sc :SyntasticCheck<CR>
-nnoremap <Leader>vc :PluginClean<CR>
-nnoremap <Leader>vu :PluginUpdate<CR>
+nnoremap <silent> <Space> :nohlsearch<CR><Space>
+nmap <leader><leader> <Plug>(easymotion-sn)
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gu :GundoToggle<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>sc :SyntasticCheck<CR>
+nnoremap <leader>vc :PluginClean<CR>
+nnoremap <leader>vu :PluginUpdate<CR>
 
-" buffer/tab/window navigation shortcuts
 for i in range(1,9)
-    execute 'nmap <silent> <leader>b' . i . ' <Plug>AirlineSelectTab' . i
-    execute 'nnoremap <silent> <leader>t' . i . ' ' . i . 'gt'
-    execute 'nnoremap <silent> <leader>w' . i . ' :' . i . 'wincmd w<CR>'
+    execute "nmap <silent> <leader>b" . i . " <Plug>AirlineSelectTab" . i
+    execute "nnoremap <silent> <leader>t" . i . " " . i . "gt"
+    execute "nnoremap <silent> <leader>w" . i . " :" . i . "wincmd w<CR>"
 endfor
+
+" map keys - INSERT mode
+inoremap <ESC>v <ESC>p<C-R>*<ESC>p
+
+" map keys - VISUAL mode
+vnoremap <Space> "*y
 
 " command to run perltidy on a range of lines
 command -range=% -nargs=* PerlTidy <line1>,<line2>!perltidy
 
-" wrapper to run perltidy on a whole buffer and restore cursor position
-function RunPerlTidy()
+" function to run perltidy on a whole buffer and restore cursor position
+function! RunPerlTidy()
     let position = line2byte(line("."))
     :PerlTidy
     execute "goto " . position
 endfunction
 
-" set local custom autocmds in their own group
+" function to display help in its own tab for easier reading
+function! HelpInTab()
+    if &buftype == 'help'
+        execute "normal! \<C-W>T"
+    endif
+endfunction
+
+" function to restore previous cursor position on buffer open
+function! RestoreCursorPosition()
+    if line("'\"") > 0 && line("'\"") <= line("$")
+        execute "normal! g'\""
+    endif
+endfunction
+
+" local custom autocmds in their own group
 augroup local
     " clear all commands in this group
     autocmd!
+    " open help buffers in a separate tab 
+    autocmd BufEnter *.txt call HelpInTab()
+    " restore previous cursor position on buffer read
+    autocmd BufReadPost * call RestoreCursorPosition()
     " map perltidy shortcuts
     autocmd FileType perl nnoremap <leader>pt :call RunPerlTidy()<CR>
     autocmd Filetype perl vnoremap <leader>pt :PerlTidy<CR>
-augroup END
-
-" set default autocmd to manage simultaneous edits
-augroup default
-    " clear all commands in this group
-    autocmd!
-    " set cursor position to previous on buffer read
-    autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \   exe "normal! g'\"" |
-            \ endif
-    " set read-only to avoid simultaneous edits of the same file
+    " choose read-only to avoid simultaneous edits of the same file
     autocmd SwapExists * :let v:swapchoice = 'o'
 augroup END
-
-" avoid duplicate terminal output for subshell commands
-set shellpipe=>
-
-" source local configuration
-if filereadable('~/.vim/local.vim')
-    source ~/.vim/local.vim
-endif
