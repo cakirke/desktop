@@ -23,19 +23,18 @@ let mapleader=";"
 
 " use vundle for addon management
 filetype off
-set runtimepath +=~/.vim/bundle/vundle/
-call vundle#rc()
+set runtimepath +=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ap/vim-css-color'
 Plugin 'bling/vim-airline'
 Plugin 'c9s/perlomni.vim'
 Plugin 'edsono/vim-matchit'
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'mkitt/tabline.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Raimondi/delimitMate'
@@ -46,9 +45,9 @@ Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-perl/vim-perl'
+call vundle#end()
 
 " configure airline behavior
-let g:airline_theme = 'dark'
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -57,8 +56,7 @@ let g:airline_detect_modified = 1
 let g:airline_detect_paste = 1
 let g:airline_detect_iminsert = 1
 let g:airline_section_z = '%3c [0x%03B] %3p%% %2(%{winnr()}%)'
-let g:airline#extensions#quickfix#location_text = 'Location'
-let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline_theme = 'dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -77,6 +75,10 @@ let g:gitgutter_sign_column_always = 1
 " configure gundo behavior
 let g:gundo_close_on_revert=1
 
+" configure nerdtree behaviour
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeShowHidden=1
+
 " configure syntastic behavior
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_auto_jump = 3
@@ -86,7 +88,7 @@ filetype plugin indent on
 syntax on
 
 " configure color scheme
-highlight link EasyMotionTarget VisualNOS 
+highlight link EasyMotionTarget VisualNOS
 highlight link EasyMotionShade LineNr
 highlight LineNr ctermfg=DarkGrey
 highlight SignColumn ctermbg=None
@@ -239,7 +241,7 @@ endfunction
 augroup local
     " clear all commands in this group
     autocmd!
-    " open help buffers in a separate tab 
+    " open help buffers in a separate tab
     autocmd BufEnter *.txt call HelpInTab()
     " restore previous cursor position on buffer read
     autocmd BufReadPost * call RestoreCursorPosition()
