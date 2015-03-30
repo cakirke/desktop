@@ -9,6 +9,7 @@
 .bash_history
 .cache
 .config
+.cpan
 .cpanm
 .cups
 .dropbox
@@ -21,6 +22,7 @@
 .npm
 .perlbrew
 .rnd
+.smartcd
 .ssh
 .subversion
 .vim
