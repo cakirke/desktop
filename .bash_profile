@@ -1,5 +1,4 @@
-export ADT_HOME=${HOME}/Tools/adt-bundle-mac-x86_64-20131030/sdk
-export PATH=${HOME}/Bin:${ADT_HOME}/tools:${ADT_HOME}/platform-tools:/usr/local/sbin:/usr/local/bin:${PATH}
+export PATH=${HOME}/Bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:${PATH}
 export EDITOR=vim
 
 export ORACLE_HOME=${HOME}/Oracle/instantclient_12_1
@@ -15,7 +14,9 @@ then
 fi
     
 export PERLBREW_ROOT=${HOME}/Perl
-        
+
+source .homebrew
+
 if [ -d ${PERLBREW_ROOT} ]
 then
     source ${PERLBREW_ROOT}/etc/bashrc
@@ -31,7 +32,9 @@ then
     source $(brew --prefix)/etc/bash_completion
 fi
 
-if [ -f $(brew --prefix grc)/etc/grc.bashrc ]
+if [ -f $(brew --prefix)/etc/grc.bashrc ]
 then
-    source $(brew --prefix grc)/etc/grc.bashrc  
+    source $(brew --prefix)/etc/grc.bashrc
 fi
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

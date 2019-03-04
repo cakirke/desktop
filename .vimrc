@@ -29,7 +29,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ap/vim-css-color'
 Plugin 'bling/vim-airline'
 Plugin 'c9s/perlomni.vim'
-Plugin 'edsono/vim-matchit'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'Lokaltog/vim-easymotion'
@@ -70,7 +69,7 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_upper = 1
 
 " configure gitgutter behavior
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 
 " configure gundo behavior
 let g:gundo_close_on_revert=1
