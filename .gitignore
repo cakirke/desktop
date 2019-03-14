@@ -29,6 +29,7 @@
 .hgrc
 .homebrew
 .htoprc
+.iterm2*
 .joe_state
 .john
 .keepassx
