@@ -12,6 +12,7 @@
 .bliss
 .bundle
 .cache
+.cargo
 .config
 .cpan
 .cpanidx
@@ -36,11 +37,13 @@
 .lesshst
 .local
 .modulemaker
+.mono
 .node-gyp
 .node_repl_history
 .npm
 .oracle_jre_usage
 .perlbrew
+.python_history
 .rbenv
 .rnd
 .serverless
@@ -63,6 +66,7 @@ Google Drive
 Library
 Movies
 Music
+package-lock.json
 Perl
 Pictures
 Project
@@ -71,3 +75,4 @@ Source
 Tools
 VirtualBox VMs
 go
+node_modules

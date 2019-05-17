@@ -15,8 +15,6 @@ fi
     
 export PERLBREW_ROOT=${HOME}/Perl
 
-source .homebrew
-
 if [ -d ${PERLBREW_ROOT} ]
 then
     source ${PERLBREW_ROOT}/etc/bashrc
