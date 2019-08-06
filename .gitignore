@@ -27,6 +27,7 @@
 .erlang.cookie
 .freac
 .gem
+.helm
 .hgrc
 .homebrew
 .htoprc
@@ -34,6 +35,7 @@
 .joe_state
 .john
 .keepassx
+.kube
 .lesshst
 .local
 .modulemaker
