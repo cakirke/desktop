@@ -1,3 +1,6 @@
 alias barley='brew update && brew upgrade && brew cleanup && brew doctor'
 alias ps='colourify ps'
+alias pstree='colourify pstree'
 alias rm='rm -i'
+alias uptime='colourify uptime'
+alias whois='colourify whois'
