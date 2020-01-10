@@ -43,6 +43,7 @@
 .node-gyp
 .node_repl_history
 .npm
+.oh-my-zsh
 .oracle_jre_usage
 .perlbrew
 .python_history
@@ -56,6 +57,7 @@
 .subversion
 .vim
 .viminfo
+.zcompdump-macbook-5.7.1
 .zsh_history
 .wireshark
 bugreport.txt
