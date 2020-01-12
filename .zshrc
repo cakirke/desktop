@@ -79,6 +79,13 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR=vim
 
+# vi style incremental search
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
+
 # Oracle client configuration
 export ORACLE_HOME=${HOME}/Oracle/instantclient_12_1
 
